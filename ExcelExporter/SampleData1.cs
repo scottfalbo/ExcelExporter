@@ -1,4 +1,8 @@
-﻿namespace ExcelExporter;
+﻿// ------------------------------------
+// Excel Export POC
+// ------------------------------------
+
+namespace ExcelExporter;
 
 internal class SampleData1
 {
