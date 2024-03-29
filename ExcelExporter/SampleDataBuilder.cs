@@ -21,10 +21,36 @@ internal class SampleDataBuilder
         _hasSomething = random.Next(0, 2) == 1;
         _quantity = random.Next(1, 100);
         _isWhatever = random.Next(0, 2) == 1;
-        _description = "I'm a sample description.";
+        _description = "I'm a sample description, yep.";
     }
 
-    public SampleData1 BuildSampleData1()
+    public List<SampleData1> BuildSampleData1Collection()
+    {
+        var dataList = new List<SampleData1>();
+
+        for (var i = 0; i < 20; i++)
+        {
+            var data = BuildSampleData1();
+            dataList.Add(data);
+        }
+
+        return dataList;
+    }
+
+    public List<SampleData2> BuildSampleData2Collection()
+    {
+        var dataList = new List<SampleData2>();
+
+        for (var i = 0; i < 20; i++)
+        {
+            var data = BuildSampleData2();
+            dataList.Add(data);
+        }
+
+        return dataList;
+    }
+
+    private SampleData1 BuildSampleData1()
     {
         return new SampleData1
         {
@@ -36,7 +62,7 @@ internal class SampleDataBuilder
         };
     }
 
-    public SampleData2 BuildSampleData2()
+    private SampleData2 BuildSampleData2()
     {
         return new SampleData2
         {
