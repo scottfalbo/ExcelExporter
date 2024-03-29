@@ -18,14 +18,7 @@ static void Export()
     var sampleData1 = sampleDataBuilder.BuildSampleData1Collection();
     var sampleData2 = sampleDataBuilder.BuildSampleData2Collection();
 
-    var workbook = WorkbookFactory.CreateWorkbook(sampleData1, sampleData2);
-
-    if (!workbookName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
-    {
-        workbookName += ".xlsx";
-    }
-
-    File.WriteAllBytes(workbookName, workbook);
+    WorkbookFactory.CreateWorkbook(sampleData1, sampleData2);
 
     Console.WriteLine($"Workbook saved to {Path.GetFullPath(workbookName)}");
 }
